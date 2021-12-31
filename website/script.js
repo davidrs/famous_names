@@ -1,7 +1,7 @@
 
 let actor_movies = {};
 let current_name='';
-
+let seed=0;
 let get_actors = credits => {
     let actor_names = []
     let actor_movies = {}
@@ -33,6 +33,7 @@ $( "#hint" ).click(function() {
 });
 
 $( "#next" ).click(function() {  
+    seed++;
     current_name = randomActor(actor_names)
     playRound(current_name,actor_movies,false)
 });
@@ -44,7 +45,7 @@ let playRound = (name, actor_movies) =>{
 };
 
 let randomActor = (actor_names) =>{
-    return actor_names[Math.round(Date.now()/(60*200))%actor_names.length]
+    return actor_names[Math.round(seed+Date.now()/(60*200))%actor_names.length]
 }
 
 let playGame = actor_movies =>{
