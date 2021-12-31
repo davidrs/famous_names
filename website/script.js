@@ -20,7 +20,7 @@ let get_actors = credits => {
 };
 
 let shuffleWord = (word) => {
-    const shuffled= word.split('').sort().join('')
+    const shuffled= word.toLowerCase().split('').sort().join('')
     return shuffled
 };
 
@@ -37,12 +37,8 @@ $( "#next" ).click(function() {
     playRound(current_name,actor_movies,false)
 });
 
-let playRound = (name, actor_movies, easy=False) =>{
-    let points=0
+let playRound = (name, actor_movies) =>{
     let shfl = shuffleWord(name)
-    if (!easy){
-        shfl=shfl.toLowerCase()
-    }
     $("#name").text(shfl);
     $("#movies").text(actor_movies[name][Date.now()%actor_movies[name].length]);
 };
