@@ -1,3 +1,21 @@
 #name{
     font-size: 22px;
 }
+
+#answer{
+    background-color: rgba(230, 165, 165, 0.63);
+}
+
+
+#hint{
+    background-color: rgb(231, 199, 140);
+}
+
+
+#next{
+    background-color: rgb(140, 231, 148);
+}
+
+button{
+    padding: 6px;
+}

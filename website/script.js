@@ -2,8 +2,6 @@
 let actor_movies = {};
 let current_name='';
 
-// var x = $.csv.toObjects('tmdb_5000_credits.csv');
-// console.log(x)
 let get_actors = credits => {
     let actor_names = []
     let actor_movies = {}
@@ -27,11 +25,11 @@ let shuffleWord = (word) => {
 };
 
 $( "#answer" ).click(function() {
-    $("#name").append(current_name);
+    $("#name").text(current_name);
 });
 
 $( "#hint" ).click(function() {
-    $("#movies").append('\n<br/>'+actor_movies[current_name][Date.now()%actor_movies[current_name].length]);
+    $("#movies").append('\n<br/>' + actor_movies[current_name][Date.now()%actor_movies[current_name].length]);
 });
 
 $( "#next" ).click(function() {  
